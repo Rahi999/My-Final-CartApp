@@ -9,6 +9,7 @@ const ProdductsDetails = () => {
   const {click,setCartItem,CartItem,cartData} = useContext(AuthContext)
 
   const [data,setData] = useState({});
+  
 
   useEffect(()=> {
    fetch(`http://localhost:8000/products/${params.id}`)
@@ -29,8 +30,14 @@ const ProdductsDetails = () => {
   return (
     <div>
       <img width = "300px" src={data.image} alt="" />
+      <h2>Product Details :</h2>
       <h3>{data.title}</h3>
-      <h1>${data.price}</h1>
+      <h3 style={{
+        textAlign:"center"
+      }}>{data.description}</h3>
+      <h1 style={{
+        color:"green"
+      }}>Price : {" "}${data.price}</h1>
       <button onClick={handleOnCart}>Add To Cart</button>
     </div>
   )

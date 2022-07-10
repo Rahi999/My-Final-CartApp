@@ -20,10 +20,10 @@ const Login = () => {
     }
    const handleOnSubmit = (e)=> {
     e.preventDefault();
-    if(form.email == ""){
-        alert("Please Enter Email")
-    } else if(form.password == ""){
-        alert("Please Enter Password")
+    if(form.email == "" || form.email != "eve.holt@reqres.in"){
+        alert("Please Enter Correct Email")
+    } else if(form.password == "" || form.password != "cityslicka"){
+        alert("Please Enter Correct Password")
     } else if(form.name == ""){
         alert("Please Enter Name")
     } else if(form.email != "" && form.password != "" && form.name != ""){
@@ -37,6 +37,7 @@ const Login = () => {
         .finally(()=> {
             login();
             setName(form.name)
+            alert(`congratulation!! Mr.${form.name} You are Succesfully Logged in`)
         })
     }
    }

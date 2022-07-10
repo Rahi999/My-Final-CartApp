@@ -14,7 +14,7 @@ const Cart = () => {
     <div style={{
       display:"grid", gridTemplateColumns:"repeat(3,1fr)"
     }}>{ cart ? cart.map((c)=> (
-      <div >
+      <div key={c.id} >
         <img width="200px" src={c.image} alt="" />
         <h3>{c.title}</h3>
         <h3>${c.price}</h3>
